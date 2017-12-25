@@ -1,159 +1,156 @@
 #### Тема нашего урока - SVC(Source Version Control)
 
--  ![Screenshot_1](http://valuebound.com/sites/default/files/2015-12/Beginners_guide_setting_up-git.jpg)
+1. Что такое SVC? И Зачем он нужен?
+2. Apache Subversion(SVN), Team Foundation Server(TFS) или Git?
+3. Жизнь без SVC и с, какие проблемы решает?
+4. Что бы вы делали без SVC, локально, как происходило бы версионирование?
+5. Начало работы
 
--  Что такое SVC? И Зачем он нужен?
-
--  Apache Subversion(SVN), Team Foundation Server(TFS) или Git?
-
--  Жизнь без SVC и с, какие проблемы решает?
-
--  Что бы вы делали без SVC, локально, как происходило бы версионирование?
-
--  Начало работы
-
-  - Вдруг кому-то надо - https://git-scm.com/book/en/v2 книга про Git
-
-
-  - Создаем аккаунт на https://github.com
-
+  - Создаем аккаунт на https://github.com (Вдруг кому-то надо - https://git-scm.com/book/en/v2)
   - Формат имени при создании аккаунтов: level-{lastName}-{firstName}, без фигурных скобок пример: level-pupkin-vasiliy
+  - SSH Ключи - зачем их использовать?
+  - Загружаем и устанавливаем клиент: https://git-scm.com/
 
-- SSH Ключи - зачем их использовать?
 
-- Загружаем и устанавливаем клиент: https://git-scm.com/
+#### <Practice>
 
-  ​
+1 - В корне диска C:/ или D:/  создаем папку Projects - заходим в нее, созадаем папку git-practice,
+​	заходим в нее.
 
-  ​
+2 - Выполняем команду **git init** [Создание пустого гит-репозитория или переинициализация существующего], у вас появится скрытая папка в корне(.git), которая внутри и будет хранить всю локальную историю, версии файлов и прочее необходимое Git для работы, удаление ее повлечет потерю локальных данных, не синхронизированных с Github репозиторием.
 
-  ​
+<!--А теперь представим, у вас есть задание - написать функцию деления одного цисла на другое, что мы и сделаем.-->
 
-  #### Практика,
+3 - Создадим текстовый файл file.js c таким содержимым:
 
-  1 - В корне диска C:/ или D:/  создаем папку Projects - заходим в нее, созадаем папку git-practice,
-  ​	заходим в нее.
+``` javascript
+function Devison(arg1, arg2)	{
+  return arg1 / arg2;
+}
+```
 
-  2 - Выполняем команду **git init** [Создание пустого гит-репозитория или переинициализация существующего], у вас появится скрытая папка в корне(.git), которая внутри и будет хранить всю локальную историю, версии файлов и прочее необходимое Git для работы, удаление ее повлечет потерю локальных данных, не синхронизированных с Github репозиторием.
+4 - Выполним команду **git status**[Отображает статус в текущей ветке], а у нас (master) и увидим:
 
-  <!--А теперь представим, у вас есть задание - написать функцию деления одного цисла на другое, что мы и сделаем.-->
+```
+Untracked files:
+(use "git add <file>..." to include in what will be committed)
 
-  3 - Создадим текстовый файл file.js c таким содержимым:
+file.js
+```
 
-  ``` javascript
-  function Devison(arg1, arg2)	{
-    return arg1 / arg2;
-  }
-  ```
+​	git status нам показывает, что есть файл за изменениями которого git не следит и как видно предлагает выпонить комманду git add <file>.
 
-  4 - Выполним команду **git status**[Отображает статус в текущей ветке], а у нас (master) и увидим:
+5 - Выполним команду **git add** {full path from root folder with file name} [Добавление файла в текущий коммит], т.к мы находмися в корневом каталоге, то можем просто выполнить git add file.js
 
-  ```
-  Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+​	Если мы выполним git status сейчас, увидим следущую картину:
 
-  file.js
-  ```
+```
+Changes to be committed:
+(use "git rm --cached <file>..." to unstage)
 
-  ​	git status нам показывает, что есть файл за изменениями которого git не следит и как видно предлагает выпонить комманду git add <file>.
+      new file:   file.js
 
-  5 - Выполним команду **git add** {full path from root folder with file name} [Добавление файла в текущий коммит], т.к мы находмися в корневом каталоге, то можем просто выполнить git add file.js
+```
+​	Как видите файл стал зеленого цвета и он "готов" к тому, чтобы мы его залили.
 
-  ​	Если мы выполним git status сейчас, увидим следущую картину:
+6 - Что мы и сделаем, **git commit** [Запись изменений в локальный репозиторий]  
 
-  ```
-  Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
+​	И попадаем в VI редактор,  [Документация](https://www.cs.colostate.edu/helpdocs/vi.html)
 
-        new file:   file.js
+​	Нажимаем [I](Button, stands for Insert)
 
-  ```
-  ​	Как видите файл стал зеленого цвета и он "готов" к тому, чтобы мы его залили.
+​	И набираем краткий комментарий к тому, что вы сделали,
 
-  6 - Что мы и сделаем, **git commit** [Запись изменений в локальный репозиторий]  
+​	к примеру **"added division function"**
 
-  ​	И попадаем в VI редактор,  [Документация](https://www.cs.colostate.edu/helpdocs/vi.html)
+​	Далее, нажимаем [Esc](Escape button), и набираем такую комбинацию **:wq**
 
-  ​	Нажимаем [I](Button, stands for Insert)
+​	[Enter](Enter button)
 
-  ​	И набираем краткий комментарий к тому, что вы сделали,
+​	Альтернативный быстрый путь: option **-m**
 
-  ​	к примеру **"added division function"**
+```
+  git commit -m "added division function"
+```
 
-  ​	Далее, нажимаем [Esc](Escape button), и набираем такую комбинацию **:wq**
+7 - Коммандой **git log** мы можем просмотреть историю комитов
 
-  ​	[Enter](Enter button)
+<!--Допустим что этот файл - один из многих в Вашем проекте, и вот мы его сделали, молодцы, отдаем говорим что сделано, отдаем на проверку QA  -->
 
-  ​	Альтернативный быстрый путь: option **-m**
+​	Через 10 минут ваш QA говорит - что есть баг 
 
-  ```
-    git commit -m "added division function"
-  ```
+``` javascript
+Devison(2, 0);
+```
 
-  7 - Коммандой **git log** мы можем просмотреть историю комитов
+​	Деление на 0
 
-  <!--Допустим что этот файл - один из многих в Вашем проекте, и вот мы его сделали, молодцы, отдаем говорим что сделано, отдаем на проверку QA  -->
+8 - Открываем наш файл file.js и добавляем проверку, теперь наш код выглядит вот так:
+​	
 
-  ​	Через 10 минут ваш QA говорит - что есть баг 
+``` javascript
+function Devision(arg1, arg2)	{
+  	if (arg2 == 0)
+    {
+      throw "Devision by zero"
+    }
+  
+    return arg1 / arg2; 
+}
+```
 
-  ``` javascript
-  Devison(2, 0);
-  ```
+​	git status после сохранения нам скажем вот что:
+​	
 
-  ​	Деление на 0
+```
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
-  8 - Открываем наш файл file.js и добавляем проверку, теперь наш код выглядит вот так:
-  ​	
+        modified:   file.js
 
-  ``` javascript
-  function Devision(arg1, arg2)	{
-    	if (arg2 == 0)
-      {
-        throw "Devision by zero"
-      }
-    
-      return arg1 / arg2; 
-  }
-  ```
+no changes added to commit (use "git add" and/or "git commit -a")
+```
 
-  ​	git status после сохранения нам скажем вот что:
-  ​	
+​	После того как Git начал следить за файлом - мы можем увидеть что 							файл помечен как modified.
 
-  ```
-  On branch master
-  Changes not staged for commit:
-    (use "git add <file>..." to update what will be committed)
-    (use "git checkout -- <file>..." to discard changes in working directory)
+9 - Давайте посмотрим какие же изменения вы внесли,
+комманда [**git diff**](Показывает изменения) покажет наши изменения.
 
-          modified:   file.js
+10 - Сделаем то-же самое но в Visual Studio или в Visual Studio Code, добавим новый файл textFile2.txt
 
-  no changes added to commit (use "git add" and/or "git commit -a")
-  ```
+## <Conflict Resolve>
 
-  ​	После того как Git начал следить за файлом - мы можем увидеть что файл помечен как modified.
+Смоделируем ситуацию конфликта...
 
-  9 - Давайте посмотрим какие же изменения вы внесли,
-  комманда [**git diff**](Показывает изменения) покажет наши изменения.
 
-  10 - Сделаем то-же самое но в Visual Studio или в Visual Studio Code, добавим новый файл textFile2.txt
 
-  ​
+### <In Addition>
 
-  <В дополнение>
-
-  Замена встроенного текстового редактора VIM
+- Замена встроенного текстового редактора VI:
 
   **git config core.editor notepad**
 
 
-  Удобные клиенты для работы с SVC
+- Удобные клиенты для работы с SVC
 
-  SourceTree,
-  GitHub,
-  TortoiseGit,
+    SourceTree,
+    GitHub,
+    TortoiseGit
 
-  VisualStudio,
+- Так же можно использовать 
 
-  VisualCode
+    VisualStudio,
 
-  git config merge.tool tortoisemerge - удобная программа для разрешения конфликтов мерджа
+    VisualStudioCode
+
+- Замена стандартного инструмента Мерджа:
+
+   git config merge.tool <program>
+
+  tortoisemerge - удобная программа для разрешения конфликтов мерджа
+
+  пример :  git config merge.tool tortoisemerge 
+
+ 
