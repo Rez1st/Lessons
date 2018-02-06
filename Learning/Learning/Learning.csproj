@@ -48,5 +48,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Delegates\Delegates.csproj">
+      <Project>{C8AF0E4D-E508-403C-B2DE-BAC7D7995C3B}</Project>
+      <Name>Delegates</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Invoker.cs\Helper.csproj">
+      <Project>{57898171-62DB-4617-AA53-A4F0F9EBD81B}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
