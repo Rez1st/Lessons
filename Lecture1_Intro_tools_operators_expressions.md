@@ -161,16 +161,16 @@ Building first App:
 
 static void Main(string[] args)
 {
-// Set up Console UI (CUI)
-Console.Title = "My Rocking App";
-Console.ForegroundColor = ConsoleColor.Yellow;
-Console.BackgroundColor = ConsoleColor.Blue;
-Console.WriteLine("*************************************");
-Console.WriteLine("***** Welcome to My Rocking App *****");
-Console.WriteLine("*************************************");
-Console.BackgroundColor = ConsoleColor.Black;
-// Wait for Enter key to be pressed.
-Console.ReadLine();
+   Console.Title = "My First App in A-level lecure room";
+    Console.ForegroundColor = ConsoleColor.Black;
+    Console.BackgroundColor = ConsoleColor.Gray;
+    Console.WriteLine("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+    Console.WriteLine("***** Welcome to My Awesome App *****");
+    Console.WriteLine("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+    Console.BackgroundColor = ConsoleColor.Black;
+
+    // Wait for Enter key to be pressed.
+    Console.ReadLine();
 }
 ```
 
