@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DelegatesExamples.cs" />
+    <Compile Include="Ex1.cs" />
+    <Compile Include="Ex2.cs" />
+    <Compile Include="Ex3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

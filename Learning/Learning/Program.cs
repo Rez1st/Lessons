@@ -23,25 +23,16 @@ namespace Learning
             {
                 #region InvokeBody
 
-                var ex1 = new DelegatesExamples();
+                Console.Title = "My First App in A-level lecure room";
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.BackgroundColor = ConsoleColor.Gray;
+                Console.WriteLine("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+                Console.WriteLine("***** Welcome to My Awesome App *****");
+                Console.WriteLine("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+                Console.BackgroundColor = ConsoleColor.Black;
 
-                FirstEverDelegate del1 = TestDelegate.MyFuction; // We can attach delegate like this
-                FirstEverDelegate del2 = new FirstEverDelegate(ex1.PrintSomeText); // or like this
-                FirstEverDelegate del3 = () => { Console.WriteLine("From anonymus"); }; //this is delegate attached to anonymus method
-
-                //add a chain to one delegate //MULTICAST
-                del1 += ex1.PrintSomeText;
-                del1 += (() => { Console.WriteLine("Just added more to multicast"); });
-
-                var delList = new List<FirstEverDelegate>();
-                delList.Add(del1);
-                delList.Add(del2);
-                delList.Add(del3);
-
-                foreach (var del in delList)
-                {
-                    del.Invoke();
-                }
+                // Wait for Enter key to be pressed.
+                Console.ReadLine();
 
                 #endregion
             });
