@@ -23,10 +23,7 @@ namespace Learning
             {
                 #region InvokeBody
 
-                Do();
-
-                // Wait for Enter key to be pressed.
-                Console.ReadLine();
+                TestAction();
 
                 #endregion
             });
@@ -35,6 +32,7 @@ namespace Learning
 
             #region End
 
+            Console.WriteLine("Press any key to exit...");
             Console.ReadLine();
 
             #endregion
@@ -43,7 +41,7 @@ namespace Learning
 
         #region Methods
 
-        public static void Do()
+        public static void TestAction()
         {
             Console.Title = "My First App in A-level lecure room";
             Console.ForegroundColor = ConsoleColor.Black;

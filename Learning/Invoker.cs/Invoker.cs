@@ -32,7 +32,17 @@ namespace Helper
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
-            action.Invoke();
+            try
+            {
+                action.Invoke();
+            }
+            catch (Exception e)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("ATTN!\nProgram not completed successfully");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Exception occuded: \n\n Message: {e.Message} \n StackTrace: {e.StackTrace}");
+            }
 
             sw.Stop();
             Console.ForegroundColor = ConsoleColor.Green;
