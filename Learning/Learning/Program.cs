@@ -23,13 +23,7 @@ namespace Learning
             {
                 #region InvokeBody
 
-                Console.Title = "My First App in A-level lecure room";
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.BackgroundColor = ConsoleColor.Gray;
-                Console.WriteLine("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
-                Console.WriteLine("***** Welcome to My Awesome App *****");
-                Console.WriteLine("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-                Console.BackgroundColor = ConsoleColor.Black;
+                Do();
 
                 // Wait for Enter key to be pressed.
                 Console.ReadLine();
@@ -51,6 +45,13 @@ namespace Learning
 
         public static void Do()
         {
+            Console.Title = "My First App in A-level lecure room";
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.WriteLine("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+            Console.WriteLine("***** Welcome to My Awesome App *****");
+            Console.WriteLine("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+            Console.BackgroundColor = ConsoleColor.Black;
         }
 
         #endregion
