@@ -1,4 +1,6 @@
-﻿namespace ModuleTwo
+﻿using System;
+
+namespace ModuleTwo
 {
     public interface IFinderService
     {
@@ -9,6 +11,7 @@
     {
         public string FindFile(string locationToSearch, string fileName)
         {
+            throw new NotImplementedException();
             //your code here
         }
     }
