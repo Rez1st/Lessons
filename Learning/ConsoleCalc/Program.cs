@@ -10,15 +10,27 @@ namespace ConsoleCalc
     {
         static void Main(string[] args)
         {
+            ShowInterface();
         }
 
         public static void ShowInterface()
         {
-            Console.WriteLine("Input your command");
+            bool exitRequested;
+
+            Console.WriteLine("Welcome to calculator");
+            Console.WriteLine("Lets perform our actions");
+
+            do
+            {
+                PerformAction(GetNumber(), GetNumber(), GetAction());
+
+                Console.WriteLine("Another operation?");
+                bool.TryParse(Console.ReadLine(), out exitRequested);
+            } while (exitRequested);
 
         }
 
-        private int GetNumber()
+        private static int GetNumber()
         {
             Console.WriteLine("Input number");
 
@@ -29,7 +41,7 @@ namespace ConsoleCalc
             return GetNumber();
         }
 
-        private Action GetAction()
+        private static Action GetAction()
         {
             Console.WriteLine("Input action and press enter");
             Console.WriteLine("Example given : +, -, /, *");
@@ -52,6 +64,26 @@ namespace ConsoleCalc
 
             Console.WriteLine("Input action is not valid");
             return GetAction();
+        }
+
+        private  static double PerformAction(int firstNumber, int secondNumber, Action action)
+        {
+            switch (action)
+            {
+                case Action.Addition:
+                    return firstNumber + secondNumber;
+                case Action.Substraction:
+                    return firstNumber - secondNumber;
+                case Action.Division:
+                    if (secondNumber != 0)
+                        return (double)firstNumber / secondNumber;
+                    Console.WriteLine("Division by Zero");
+                    return 0;
+                case Action.Multiplication:
+                    return firstNumber * secondNumber;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(action), action, null);
+            }
         }
     }
 
