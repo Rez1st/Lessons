@@ -10,7 +10,6 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using System.Xml.Linq;
 using Newtonsoft.Json;
 
 namespace ApiRestCalc.Areas.HelpPage
@@ -392,8 +391,7 @@ namespace ApiRestCalc.Areas.HelpPage
         {
             try
             {
-                XDocument xml = XDocument.Parse(str);
-                return xml.ToString();
+                return "";
             }
             catch
             {
