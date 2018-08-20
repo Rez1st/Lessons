@@ -8,8 +8,6 @@ namespace Learning
 {
     public class SomeClass
     {
-        public delegate void DoSome();
-
         public void Print1()
         {
             Console.WriteLine("print 1");

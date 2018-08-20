@@ -7,35 +7,12 @@ namespace Learning
     {
         private static void Main(string[] args)
         {
-            Counter counter = new Counter();
-
-            counter.OnCount += () =>
-            {
-                Console.WriteLine("event rized");
-            };
-
-            counter.Start();
-
-            Console.ReadLine();
+            Timer();
         }
 
-        public static string Mod(string s)
+        public static void Handler()
         {
-            return s + "!";
-        }
-
-        private static string Add(int arg1, int arg2)
-        {
-            return (arg1 + arg2).ToString();
-        }
-
-        public static void Do()
-        {
-        }
-
-        public static bool Doint(int i)
-        {
-            return true;
+            Console.WriteLine("event 2 raized");
         }
 
         public static void NewOverride()
@@ -52,7 +29,6 @@ namespace Learning
             //Если мы создаем инстанс BaseDot d = new RedDot() таким образом, то там где new будет вызван Базовый
             //Если мы создаем инстанс RedDot d = new RedDot() таким образом, то там где new будет вызван Конеретный метод который мы переопределили
         }
-
 
         public static void Delegates()
         {
