@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Counter.cs" />
+    <Compile Include="SomeClass.cs" />
     <Compile Include="Timer\Interfaces\ITimer.cs" />
     <Compile Include="Timer\Subscribers\AirConditioner.cs" />
     <Compile Include="Timer\Services\Timer.cs" />

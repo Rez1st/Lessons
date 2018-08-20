@@ -9,7 +9,7 @@ namespace Playground
     {
         public delegate void DoVoid();
 
-        public delegate void RunViachle(Viachle viachle);
+        public delegate int RunViachle(Viachle viachle);
 
         public List<Delegate> ListToInvoke { get; set; }
 
@@ -31,7 +31,7 @@ namespace Playground
             DelayRun(d);
 
             //they will be called as a list
-            d.Invoke();
+            d?.Invoke();
 
             Console.ReadLine();
         }
