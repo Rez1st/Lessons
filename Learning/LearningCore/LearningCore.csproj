@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1B2B63F0-2430-4FF3-B753-40DE8DDE779B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Learning</RootNamespace>
-    <AssemblyName>Learning</AssemblyName>
+    <ProjectGuid>{9C6EE71F-6C74-408C-A881-3F5CF6E6E233}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LearningCore</RootNamespace>
+    <AssemblyName>LearningCore</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,37 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Extentions.cs" />
+    <Compile Include="LessonBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Delegates\Delegates.csproj">
-      <Project>{C8AF0E4D-E508-403C-B2DE-BAC7D7995C3B}</Project>
-      <Name>Delegates</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Invoker.cs\Helper.csproj">
-      <Project>{57898171-62DB-4617-AA53-A4F0F9EBD81B}</Project>
-      <Name>Helper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LearningCore\LearningCore.csproj">
-      <Project>{9C6EE71F-6C74-408C-A881-3F5CF6E6E233}</Project>
-      <Name>LearningCore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Module3\ModuleThree.csproj">
-      <Project>{a95d3a73-49ca-4c2c-8482-a21abe67c66c}</Project>
-      <Name>ModuleThree</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ModuleOne\ModuleOne.csproj">
-      <Project>{372bac85-f45f-49c1-80d8-217d8cb96d32}</Project>
-      <Name>ModuleOne</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ModuleTwo\ModuleTwo.csproj">
-      <Project>{b202dff4-4e58-4ce6-bf1e-7cc24b8d2541}</Project>
-      <Name>ModuleTwo</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
