@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestCalc", "ApiRestCalc\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcCalc", "MvcCalc\MvcCalc.csproj", "{17A5E0BA-0225-45AF-9622-9D3CAEF8B0F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleThree", "Module3\ModuleThree.csproj", "{A95D3A73-49CA-4C2C-8482-A21ABE67C66C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningCore", "LearningCore\LearningCore.csproj", "{9C6EE71F-6C74-408C-A881-3F5CF6E6E233}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +75,14 @@ Global
 		{17A5E0BA-0225-45AF-9622-9D3CAEF8B0F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17A5E0BA-0225-45AF-9622-9D3CAEF8B0F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17A5E0BA-0225-45AF-9622-9D3CAEF8B0F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A95D3A73-49CA-4C2C-8482-A21ABE67C66C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A95D3A73-49CA-4C2C-8482-A21ABE67C66C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A95D3A73-49CA-4C2C-8482-A21ABE67C66C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A95D3A73-49CA-4C2C-8482-A21ABE67C66C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C6EE71F-6C74-408C-A881-3F5CF6E6E233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C6EE71F-6C74-408C-A881-3F5CF6E6E233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C6EE71F-6C74-408C-A881-3F5CF6E6E233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C6EE71F-6C74-408C-A881-3F5CF6E6E233}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

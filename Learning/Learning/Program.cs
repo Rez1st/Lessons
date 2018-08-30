@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Delegates;
 using Helper;
+using Module3;
 
 namespace Learning
 {
@@ -21,11 +22,9 @@ namespace Learning
 
             invoker.Invoke(() =>
             {
-                #region InvokeBody
-
-
-
-                #endregion
+                //new GenericLesson().Process();
+                new ReflectionLesson().Process();
+                //new CollectionLesson().Process();
             });
 
             #endregion
@@ -38,20 +37,5 @@ namespace Learning
             #endregion
         }
 
-
-        #region Methods
-
-        public static void TestAction()
-        {
-            Console.Title = "My First App in A-level lecure room";
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.Gray;
-            Console.WriteLine("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
-            Console.WriteLine("***** Welcome to My Awesome App *****");
-            Console.WriteLine("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-            Console.BackgroundColor = ConsoleColor.Black;
-        }
-
-        #endregion
     }
 }
