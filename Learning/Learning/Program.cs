@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using Delegates;
 using Helper;
 using Module3;
@@ -14,18 +16,22 @@ namespace Learning
         {
             #region Start
 
-            Console.WriteLine($".NET C# \n");
+            //Console.WriteLine($".NET C# \n");
 
             #endregion
 
             #region Body
 
-            invoker.Invoke(() =>
-            {
-                //new GenericLesson().Process();
-                new ReflectionLesson().Process();
-                //new CollectionLesson().Process();
-            });
+            //invoker.Invoke(() =>
+            //{
+            //    //new GenericLesson().Process();
+            //    //new ReflectionLesson().Process();
+            //    //new CollectionLesson().Process();
+            //    //new MutlyThreadingLesson().Process();
+
+            //});
+            Clock clock = new Clock();
+            clock.Start();
 
             #endregion
 

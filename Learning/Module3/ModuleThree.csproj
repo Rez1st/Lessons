@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="CollectionLesson.cs" />
     <Compile Include="GenericLesson.cs" />
+    <Compile Include="MutlyThreadingLesson.cs" />
     <Compile Include="ReflectionLesson.cs" />
   </ItemGroup>
   <ItemGroup>

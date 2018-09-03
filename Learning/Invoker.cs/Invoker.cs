@@ -5,8 +5,8 @@ namespace Helper
 {
     public sealed class Invoker
     {
-        private static volatile Invoker instance;
-        private static object syncRoot = new Object();
+        private static volatile Invoker _instance;
+        private static readonly object SyncRoot = new object();
 
         private Invoker() { }
 
@@ -14,16 +14,16 @@ namespace Helper
         {
             get
             {
-                if (instance == null)
+                if (_instance == null)
                 {
-                    lock (syncRoot)
+                    lock (SyncRoot)
                     {
-                        if (instance == null)
-                            instance = new Invoker();
+                        if (_instance == null)
+                            _instance = new Invoker();
                     }
                 }
 
-                return instance;
+                return _instance;
             }
         }
 
