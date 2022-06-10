@@ -6,8 +6,6 @@
 
   <ItemGroup>
     <Folder Include="LinkedList\" />
-    <Folder Include="OnlineShop\" />
-    <Folder Include="SeaBattle\" />
   </ItemGroup>
 
 </Project>

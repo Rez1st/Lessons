@@ -18,7 +18,8 @@ namespace HomeWork
         {
             var sb = new StringBuilder();
 
-            for (var i = 0; i < length; i++) sb.Append(ch);
+            for (var i = 0; i < length; i++)
+                sb.Append(ch);
 
             return sb.ToString();
         }

@@ -16,6 +16,11 @@ namespace HomeWork.RaceGame.Models
         {
             Color = carColor;
             Speed = speed;
+
+            lock (_syncLock)
+            {
+            }
+
         }
         
         /// <summary>
@@ -33,19 +38,30 @@ namespace HomeWork.RaceGame.Models
                 $"Driver : {DriverName}".PrintAt(_progress, position - 1, Color);
                 "|".PrintAt(distance / Delta + 1, position, ConsoleColor.White);
             }
-
+            
             while (!token.IsCancellationRequested)
             {
                 lock (_syncLock)
                 {
                     var sb = new StringBuilder();
 
-                    for (var j = 0; j <= _progress; j++) sb.Append(_progress != j ? " " : CarLook);
+                    for (var j = 0; j <= _progress; j++)
+                    {
+                        if (_progress == j)
+                        {
+                            sb.Append(CarLook);
+                        }
+                        else
+                        {
+                            sb.Append(" ");
+                        }
+                    }
 
                     sb.ToString().PrintAt(0, position, Color);
                     _progress++;
 
-                    if (distance < _progress * Delta) break;
+                    if (distance < _progress * Delta)
+                        break;
                 }
 
                 Thread.Sleep(distance / Speed * IRaceCar.SpeedModificator);
@@ -54,4 +70,5 @@ namespace HomeWork.RaceGame.Models
             return Task.CompletedTask;
         }
     }
+
 }
